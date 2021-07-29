@@ -41,9 +41,9 @@ Other files are:
 
 Queries were made through minified URL encoded JSON with Elasticsearch syntax.
 
-### Sass
+### Scss
 
-CSS was organised with Sass. There was less of an emphasis with CSS on this project, as the concentration was on Javascript. Consequently, responsiveness has been left out for now, but will be implemented soon.
+CSS was organised with Scss. There was less of an emphasis with CSS on this project, as the concentration was on Javascript. Consequently, responsiveness has been left out for now, but will be implemented soon.
 
 ### Parcel
 
