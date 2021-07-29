@@ -1,0 +1,42 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-grey);
+  background-color: $color-primary-light-3;
+}
+
+.container {
+  width: 125rem;
+  min-height: 105rem;
+  background-color: $color-white;
+  border-radius: 0.6rem;
+  margin: 6rem auto;
+  box-shadow: var(--shadow-container);
+  display: grid;
+  grid-template-columns:
+    [full-start results-start] var(--container-listing-width)
+    [results-end artwork-start] 1fr
+    [artwork-end favourites-start] var(--container-listing-width)
+    [favourites-end full-end];
+
+  grid-template-rows: [head-start] 16rem [head-end main-start] 1fr [main-end footer-start] 16rem [footer-end];
+  overflow: hidden;
+}
+
+::selection {
+  background-color: $color-primary-dark;
+  color: $color-white;
+}

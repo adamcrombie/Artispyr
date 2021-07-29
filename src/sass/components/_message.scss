@@ -1,0 +1,76 @@
+%message {
+  display: flex;
+  align-items: center;
+  background-color: $color-primary-light-1;
+  border: 1px solid $color-primary-medium;
+  border-radius: 0.4rem;
+  width: 100%;
+}
+
+%svg-icon {
+  flex: none;
+  fill: $color-primary-dark;
+  stroke: $color-primary-dark;
+}
+
+.message-main {
+  @extend %message;
+  padding: 1rem 2rem;
+
+  &__icon {
+    width: 5.5rem;
+    height: 5.5rem;
+
+    &--error {
+      @extend %svg-icon;
+      width: 6.5rem;
+      height: 6.5rem;
+    }
+  }
+
+  &__paragraph {
+    font-size: 1.6rem;
+    padding: 1rem;
+  }
+}
+
+.message-column {
+  @extend %message;
+
+  padding: 0.5rem 1rem;
+
+  &__icon {
+    width: 3.5rem;
+    height: 3.5rem;
+
+    &--error {
+      @extend %svg-icon;
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+
+  &__paragraph {
+    font-size: 1.4rem;
+    padding: 0.5rem;
+  }
+}
+
+.message-loading {
+  &__icon {
+    margin-top: 2rem;
+    stroke: $color-primary-dark;
+    animation: rotate360 1.8s linear 0s infinite;
+
+    &--main {
+      width: 12rem;
+      height: 12rem;
+      margin-bottom: 14rem;
+    }
+
+    &--column {
+      width: 10rem;
+      height: 10rem;
+    }
+  }
+}

@@ -1,0 +1,96 @@
+.artwork-listing {
+  width: 95%;
+  margin-top: 0.5rem;
+  border-radius: 0.6rem;
+  height: 8.5rem;
+
+  &:last-child {
+    margin-bottom: 0.5rem;
+  }
+
+  &__link {
+    &,
+    &:link,
+    &:visited {
+      display: grid;
+      grid-template-columns: 7rem 1fr;
+      grid-template-rows: repeat(2, 1fr);
+      grid-column-gap: 0.5rem;
+      height: 100%;
+      color: inherit;
+      border-radius: inherit;
+      text-decoration: none;
+      padding: 0.8rem;
+      transition: all 0.3s;
+      position: relative;
+
+      &:not(.selected) {
+        background-color: $color-primary-light-1;
+      }
+
+      &.selected {
+        background-color: $color-primary-medium;
+      }
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      background-color: $color-primary-medium;
+    }
+
+    &:active {
+      color: var(--color-grey-dark-1);
+    }
+  }
+
+  &__img {
+    grid-column: 1 /2;
+    grid-row: 1 / span 2;
+    align-self: center;
+    max-width: 7rem;
+    height: 6rem;
+  }
+
+  &__info {
+    font-size: 1.2rem;
+    font-weight: var(--font-weight-semi-bold);
+    grid-column: 2 / 3;
+
+    &--artwork {
+      grid-row: 1 / 2;
+      align-self: end;
+      padding-bottom: 4px;
+      border-bottom: 2px solid $color-primary-dark;
+    }
+
+    &--artist {
+      grid-row: 2 / 3;
+      padding-top: 4px;
+      font-weight: var(--font-weight-bold);
+    }
+  }
+
+  &__favourite-icon {
+    position: absolute;
+    bottom: 2px;
+    right: 1px;
+    width: 2rem;
+    height: 2rem;
+
+    &--fill {
+      fill: $color-primary-dark;
+    }
+
+    &--stroke {
+      stroke: $color-primary-dark;
+      border-radius: 0.4rem;
+      transition: all 0.3s;
+
+      &:hover {
+        stroke: $color-primary-light-1;
+        background-color: $color-primary-dark;
+        transform: scale(1.1);
+      }
+    }
+  }
+}

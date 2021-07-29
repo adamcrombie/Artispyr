@@ -1,0 +1,14 @@
+.heading-column {
+  text-transform: uppercase;
+  font-weight: var(--font-weight-semi-bold);
+  font-size: 1.6rem;
+}
+
+.paragraph {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+
+  &__heading {
+    font-weight: var(--font-weight-semi-bold);
+  }
+}

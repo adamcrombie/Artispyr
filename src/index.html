@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon16.png" />
+    <script type="module" defer src="./js/controller.js"></script>
+    <link rel="stylesheet" href="./sass/main.scss" />
+    <title>Artispyr - Explore 1000s of Artworks!</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header__results-summary"></div>
+        <form class="header__form search">
+          <div class="search__group">
+            <div class="radio-group">
+              <input
+                type="radio"
+                class="radio-group__radio"
+                id="artwork-radio"
+                name="category"
+                value="artwork"
+                checked
+              />
+              <label for="artwork-radio" class="radio-group__label">
+                <span class="radio-group__btn"></span>
+                Artwork
+              </label>
+            </div>
+            <div class="radio-group">
+              <input
+                type="radio"
+                class="radio-group__radio"
+                id="artist-radio"
+                name="category"
+                value="artist"
+              />
+              <label for="artist-radio" class="radio-group__label">
+                <span class="radio-group__btn"></span>
+                Artist
+              </label>
+            </div>
+          </div>
+          <div class="search__group">
+            <input
+              type="text"
+              class="search__input"
+              maxlength="50"
+              placeholder="Search. . ."
+            />
+            <button class="search__btn" type="submit">
+              <svg class="search__btn__icon">
+                <use xlink:href="img/sprite.svg#search-sharp"></use>
+              </svg>
+            </button>
+          </div>
+        </form>
+        <div class="header__info">
+          <p class="header__info--block">
+            Data and images are sourced from the Art Institute of Chicago API.
+          </p>
+          <p class="header__info--block">
+            Please visit their main website here:
+            <a
+              href="https://www.artic.edu"
+              target="_blank"
+              class="header__info--link"
+              >https://www.artic.edu</a
+            >
+          </p>
+          <p class="header__info--block">
+            Search queries show only artwork which is in the public domain and
+            are limited to 60 requests per user per minute.
+          </p>
+        </div>
+        <img
+          src="./img/full_logo.svg"
+          alt="Artispyr logo"
+          class="header__logo"
+        />
+      </header>
+      <div class="section section__results">
+        <div class="section__heading">
+          <svg class="section__icon section__icon--results">
+            <use xlink:href="img/sprite.svg#list"></use>
+          </svg>
+          <h3 class="heading-column">Results</h3>
+        </div>
+        <div class="results">
+          <div class="results__message"></div>
+          <div class="results__listing"></div>
+        </div>
+        <div class="pagination-results"></div>
+      </div>
+      <div class="section section__artwork">
+        <div class="section__heading">
+          <svg class="section__icon section__icon--artwork">
+            <use xlink:href="img/sprite.svg#color-palette-outline"></use>
+          </svg>
+          <h3 class="heading-column">Artwork</h3>
+        </div>
+        <div class="artwork">
+          <div class="artwork__message"></div>
+          <div class="artwork__img"></div>
+          <div class="artwork__details">
+            <div class="artwork__details__message"></div>
+            <div class="artwork-details"></div>
+          </div>
+        </div>
+      </div>
+      <div class="section section__favourites">
+        <div class="section__heading">
+          <svg class="section__icon section__icon--favourites">
+            <use xlink:href="img/sprite.svg#star"></use>
+          </svg>
+          <h3 class="heading-column">Favourites</h3>
+        </div>
+        <div class="favourites">
+          <div class="favourites__message"></div>
+          <div class="favourites__listing"></div>
+        </div>
+        <div class="pagination-favourites"></div>
+      </div>
+      <footer class="footer">
+        <div class="footer__info">
+          <p class="footer__info--paragraph">
+            Copyright © by Adam Crombie - all rights reserved
+          </p>
+          <p class="footer__info--paragraph">Created for demonstration only</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

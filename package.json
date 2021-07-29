@@ -1,0 +1,19 @@
+{
+  "name": "artispyr",
+  "version": "1.0.0",
+  "description": "Website to search art",
+  "scripts": {
+    "start": "parcel serve ./src/index.html",
+    "build": "parcel build ./src/index.html --no-optimize"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-nightly.2400",
+    "@parcel/transformer-sass": "^2.0.0-nightly.778",
+    "core-js": "^3.15.2",
+    "parcel": "^2.0.0-nightly.776",
+    "regenerator-runtime": "^0.13.7"
+  }
+}

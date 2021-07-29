@@ -1,0 +1,19 @@
+.footer {
+  grid-column: full-start / full-end;
+  grid-row: footer-start / footer-end;
+  background-color: $color-primary-light-1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  &__info {
+    text-align: center;
+    &--paragraph {
+      font-size: 1.4rem;
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
