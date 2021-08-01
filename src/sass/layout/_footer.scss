@@ -10,9 +10,6 @@
   &__info {
     text-align: center;
 
-    @include respond(medium-2) {
-    }
-
     &--paragraph {
       font-size: 1.4rem;
       &:not(:last-child) {
