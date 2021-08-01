@@ -43,6 +43,7 @@ class ArtworkView extends MessageView {
   }
 
   updateFavourite(isFavourite, showtext = true) {
+    if (isFavourite !== true || isFavourite !== false) return;
     isFavourite
       ? this.#addFavourite(showtext)
       : this.#removeFavourite(showtext);
