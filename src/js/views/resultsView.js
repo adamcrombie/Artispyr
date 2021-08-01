@@ -23,7 +23,7 @@ class ResultsView extends MessageView {
   updateFavourite(favourites) {
     const elementClass = 'artwork-listing__link';
     this._contentContainer.querySelectorAll(`.${elementClass}`).forEach(el => {
-      const icon = el.querySelector('.artwork-listing__favourite-icon');
+      const icon = el.querySelector('.artwork-listing__icon');
       if (favourites.some(fav => fav.id === +el.hash.slice(1)))
         icon.classList.remove('hidden');
       else if (!icon.classList.contains('hidden')) icon.classList.add('hidden');

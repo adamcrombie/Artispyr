@@ -40,20 +40,22 @@ export class ArtworkListingView extends View {
                     crossorigin="Anonymous"
                     class="artwork-listing__img"
                     />
-                    <span class="artwork-listing__info artwork-listing__info--artwork">
+                    <div class="artwork-listing__info artwork-listing__info--upper">
                     ${this.#restrictEntryLength(this._data.artworkTitle)}
-                    </span>
-                    <span class="artwork-listing__info artwork-listing__info--artist">
-                    ${this.#restrictEntryLength(this._data.artistName)}
-                    </span>
-                    <svg class="artwork-listing__favourite-icon artwork-listing__favourite-icon--${
-                      this.#iconName === 'star' && this._data.favourite
-                        ? 'fill'
-                        : this.#iconName === 'star' && !this._data.favourite
-                        ? 'fill hidden'
-                        : 'stroke'
-                    }"><use xlink:href="${icons}#${this.#iconName}"></use>
-                    </svg>
+                    </div>
+                    <div class="artwork-listing__info artwork-listing__info--lower">
+                      <div class="artwork-listing__artist">
+                        ${this.#restrictEntryLength(this._data.artistName)}
+                      </div>
+                      <svg class="artwork-listing__icon artwork-listing__icon--${
+                        this.#iconName === 'star' && this._data.favourite
+                          ? 'fill'
+                          : this.#iconName === 'star' && !this._data.favourite
+                          ? 'fill hidden'
+                          : 'stroke'
+                      }"><use xlink:href="${icons}#${this.#iconName}"></use>
+                      </svg>
+                    </div>
                 </a>
              </div>`;
   }

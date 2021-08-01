@@ -8,6 +8,8 @@ import resultsSummaryView from './views/resultsSummaryView';
 import favouritesPaginationView from './views/favouritesPaginationView';
 import resultsPaginationView from './views/resultsPaginationView';
 import favouritesView from './views/favouritesView';
+import sectionHeadingsView from './views/sectionHeadingsView';
+import mediaQueriesView from './views/mediaQueriesView';
 import { NoResultsReceivedError } from './noResultsReceivedError';
 import { UserInputError } from './userInputError';
 import { MIN_LETTERS_IN_WORD, MAX_CHARACTERS_IN_QUERY } from './config';
@@ -54,6 +56,8 @@ const controlSearch = async function () {
   } finally {
     searchView.enable();
     resultsView.clearLoading();
+    if (sectionHeadingsView.resultsIsHidden())
+      sectionHeadingsView.showResults();
   }
 };
 
@@ -98,6 +102,20 @@ const controlToggleFavourite = function () {
   resultsView.updateFavourite(model.state.favourites.entries);
   artworkView.updateFavourite(model.state.artwork.favourite);
   favouritesView.updateSelected();
+};
+
+const controlSectionShowHide = function (action, section) {
+  if (section === 'results') sectionHeadingsView.updateResults(action);
+  else if (section === 'favourites')
+    sectionHeadingsView.updateFavourites(action);
+};
+
+const controlHideFavourites = function () {
+  sectionHeadingsView.hideFavourites();
+};
+
+const controlHideResults = function () {
+  sectionHeadingsView.hideResults();
 };
 
 const queryIsValid = function (q) {
@@ -145,6 +163,9 @@ const init = function () {
   resultsPaginationView.addHandlerClick(controlResultsPagination);
   favouritesPaginationView.addHandlerClick(controlFavouritesPagination);
   favouritesView.addHandlerDeleteFavourite(controlFavouritesDeleteFavourite);
+  sectionHeadingsView.addHandlerClick(controlSectionShowHide);
+  mediaQueriesView.monitorHideFavourites(controlHideFavourites);
+  mediaQueriesView.monitorHideResults(controlHideResults);
 };
 
 init();

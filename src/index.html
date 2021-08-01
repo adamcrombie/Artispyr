@@ -88,25 +88,49 @@
           class="header__logo"
         />
       </header>
-      <div class="section section__results">
-        <div class="section__heading">
-          <svg class="section__icon section__icon--results">
+      <div class="section__headings">
+        <button
+          class="section__btn section__btn--results"
+          data-action="hide"
+          data-section="results"
+        >
+          <svg class="section__btn__icon">
+            <use href="img/sprite.svg#caret-back"></use>
+          </svg>
+        </button>
+        <button
+          class="section__btn section__btn--favourites"
+          data-action="hide"
+          data-section="favourites"
+        >
+          <svg class="section__btn__icon">
+            <use href="img/sprite.svg#caret-forward"></use>
+          </svg>
+        </button>
+        <div class="heading heading--results">
+          <svg class="heading__icon heading__icon--results">
             <use xlink:href="img/sprite.svg#list"></use>
           </svg>
-          <h3 class="heading-column">Results</h3>
+          <h3 class="heading-3">Results</h3>
         </div>
+        <div class="heading">
+          <svg class="heading__icon heading__icon--artwork">
+            <use xlink:href="img/sprite.svg#color-palette-outline"></use>
+          </svg>
+          <h3 class="heading-3">Artwork</h3>
+        </div>
+        <div class="heading heading--favourites">
+          <svg class="heading__icon heading__icon--favourites">
+            <use xlink:href="img/sprite.svg#star"></use>
+          </svg>
+          <h3 class="heading-3">Favourites</h3>
+        </div>
+      </div>
+      <div class="section__main">
         <div class="results">
           <div class="results__message"></div>
           <div class="results__listing"></div>
-        </div>
-        <div class="pagination-results"></div>
-      </div>
-      <div class="section section__artwork">
-        <div class="section__heading">
-          <svg class="section__icon section__icon--artwork">
-            <use xlink:href="img/sprite.svg#color-palette-outline"></use>
-          </svg>
-          <h3 class="heading-column">Artwork</h3>
+          <div class="pagination-results"></div>
         </div>
         <div class="artwork">
           <div class="artwork__message"></div>
@@ -116,22 +140,25 @@
             <div class="artwork-details"></div>
           </div>
         </div>
-      </div>
-      <div class="section section__favourites">
-        <div class="section__heading">
-          <svg class="section__icon section__icon--favourites">
-            <use xlink:href="img/sprite.svg#star"></use>
-          </svg>
-          <h3 class="heading-column">Favourites</h3>
-        </div>
         <div class="favourites">
           <div class="favourites__message"></div>
           <div class="favourites__listing"></div>
+          <div class="pagination-favourites"></div>
         </div>
-        <div class="pagination-favourites"></div>
       </div>
       <footer class="footer">
         <div class="footer__info">
+          <div class="footer__info__source">
+            Data and images are sourced from the Art Institute of Chicago API.
+            Please visit their main website here:
+            <a
+              href="https://www.artic.edu"
+              target="_blank"
+              class="footer__info--link"
+              >https://www.artic.edu</a
+            >. Search queries show only artwork which is in the public domain
+            and are limited to 60 requests per user per minute.
+          </div>
           <p class="footer__info--paragraph">
             Copyright © by Adam Crombie - all rights reserved
           </p>

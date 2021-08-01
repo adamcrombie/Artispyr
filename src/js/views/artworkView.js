@@ -17,6 +17,16 @@ class ArtworkView extends MessageView {
     artworkDetailsView.render(data);
   }
 
+  renderMessage(message = this._defaultMessage) {
+    this.#clearDetailsAndImage();
+    super.renderMessage(message);
+  }
+
+  renderError(message = this._defaultErrorMessage) {
+    this.#clearDetailsAndImage();
+    super.renderError(message);
+  }
+
   addHandlerRender(handler) {
     ['hashchange', 'load'].forEach(event =>
       window.addEventListener(event, handler)
@@ -64,6 +74,12 @@ class ArtworkView extends MessageView {
     textEl.classList.add(textClass);
     textEl.textContent = message;
     textParent.append(textEl);
+  }
+
+  #clearDetailsAndImage() {
+    artworkDetailsView.clearMessage();
+    artworkDetailsView.clearContent();
+    artworkImageView.clearContent();
   }
 }
 

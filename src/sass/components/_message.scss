@@ -16,6 +16,7 @@
 .message-main {
   @extend %message;
   padding: 1rem 2rem;
+  margin-bottom: 4rem;
 
   &__icon {
     width: 5.5rem;

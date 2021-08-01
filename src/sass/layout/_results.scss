@@ -1,3 +1,14 @@
 .results {
+  grid-column: results-start / results-end;
   @include column-listing;
+}
+
+.results-show {
+  animation: widthExpandLeft 0.4s ease-out 0s 1 normal forwards,
+    slideOutLeft 0.2s ease-out 0.4s 1 normal forwards;
+}
+
+.results-hide {
+  animation: slideInLeft 0.4s ease-in 0s 1 normal forwards,
+    widthReduce 0.2s ease-in 0.4s 1 normal forwards;
 }

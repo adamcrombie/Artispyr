@@ -9,6 +9,14 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+
+  @include respond(medium-1) {
+    font-size: 58%;
+  }
+
+  @include respond(medium-2) {
+    font-size: 55%;
+  }
 }
 
 body {
@@ -25,14 +33,25 @@ body {
   border-radius: 0.6rem;
   margin: 6rem auto;
   box-shadow: var(--shadow-container);
+
+  @include respond(medium-1) {
+    box-shadow: none;
+    margin: 0;
+    border-radius: 0;
+    width: 100%;
+  }
+
   display: grid;
   grid-template-columns:
-    [full-start results-start] var(--container-listing-width)
+    [full-start results-start] var(--column-listing-width)
     [results-end artwork-start] 1fr
-    [artwork-end favourites-start] var(--container-listing-width)
+    [artwork-end favourites-start] var(--column-listing-width)
     [favourites-end full-end];
 
-  grid-template-rows: [head-start] 16rem [head-end main-start] 1fr [main-end footer-start] 16rem [footer-end];
+  grid-template-rows:
+    [head-start] 16rem [head-end heading-start] min-content
+    [heading-end main-start] 1fr [main-end footer-start] 16rem [footer-end];
+
   overflow: hidden;
 }
 

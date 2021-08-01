@@ -26,7 +26,7 @@ class FavouritesView extends MessageView {
 
   addHandlerDeleteFavourite(handler) {
     this._contentContainer.addEventListener('click', function (e) {
-      const icon = e.target.closest('.artwork-listing__favourite-icon');
+      const icon = e.target.closest('.artwork-listing__icon');
       if (!icon) return;
 
       e.preventDefault();

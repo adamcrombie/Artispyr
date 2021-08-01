@@ -1,32 +1,72 @@
 .section {
-  display: flex;
-  flex-direction: column;
-
-  &__results {
-    grid-column: results-start / results-end;
-    grid-row: main-start / main-end;
-    background-color: var(--column-background-color);
-  }
-
-  &__artwork {
-    grid-column: artwork-start / artwork-end;
-    grid-row: main-start / main-end;
-  }
-
-  &__favourites {
-    grid-column: favourites-start / favourites-end;
-    grid-row: main-start / main-end;
-    background-color: var(--column-background-color);
-  }
-
-  &__heading {
+  &__headings {
     border-top: 1px solid $color-primary-medium;
     border-bottom: 1px solid $color-primary-medium;
     background-color: $color-primary-light-1;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding: 1rem 0;
+    grid-column: full-start / full-end;
+    grid-row: heading-start / heading-end;
+    position: relative;
+  }
+
+  &__main {
+    grid-column: full-start / full-end;
+    grid-row: main-start / main-end;
+    display: flex;
+  }
+
+  &__btn {
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    background-color: inherit;
+    height: 3.5rem;
+    width: 3.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+
+    &__icon {
+      height: 3.5rem;
+      width: 3.5rem;
+      fill: $color-primary-dark;
+      transition: fill 0.3s;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      svg {
+        fill: darken($color-primary-dark, 15%);
+      }
+    }
+
+    &--results {
+      left: 1rem;
+    }
+
+    &--favourites {
+      right: 1rem;
+    }
+  }
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+
+  &--results {
+    margin-left: calc(var(--column-listing-width) / 2);
+    transform: translateX(-50%);
+  }
+
+  &--favourites {
+    margin-right: calc(var(--column-listing-width) / 2 + 1rem);
+    transform: translateX(50%);
   }
 
   &__icon {
@@ -42,10 +82,10 @@
     &--artwork,
     &--favourites {
       fill: $color-primary-dark;
-      transform: translateY(-2px);
     }
 
-    &--results {
+    &--favourites {
+      padding: 1px;
       transform: translateY(-1px);
     }
   }

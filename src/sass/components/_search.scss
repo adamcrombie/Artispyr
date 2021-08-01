@@ -124,6 +124,10 @@
     border: 4px solid $color-primary-dark;
     border-radius: 50%;
 
+    @include respond(medium-2) {
+      border-width: 3px;
+    }
+
     &::after {
       position: absolute;
       top: 50%;
@@ -137,6 +141,11 @@
       background-color: $color-primary-dark;
       opacity: 0;
       transition: opacity 0.4s;
+
+      @include respond(medium-2) {
+        height: 0.6rem;
+        width: 0.6rem;
+      }
     }
   }
 }

@@ -2,7 +2,7 @@
   width: 95%;
   margin-top: 0.5rem;
   border-radius: 0.6rem;
-  height: 8.5rem;
+  height: 9rem;
 
   &:last-child {
     margin-bottom: 0.5rem;
@@ -20,9 +20,8 @@
       color: inherit;
       border-radius: inherit;
       text-decoration: none;
-      padding: 0.8rem;
+      padding: 0.6rem 0.8rem;
       transition: all 0.3s;
-      position: relative;
 
       &:not(.selected) {
         background-color: $color-primary-light-1;
@@ -53,29 +52,34 @@
 
   &__info {
     font-size: 1.2rem;
-    font-weight: var(--font-weight-semi-bold);
     grid-column: 2 / 3;
 
-    &--artwork {
+    &--upper {
       grid-row: 1 / 2;
       align-self: end;
       padding-bottom: 4px;
       border-bottom: 2px solid $color-primary-dark;
+      font-weight: var(--font-weight-semi-bold);
     }
 
-    &--artist {
+    &--lower {
       grid-row: 2 / 3;
+      display: flex;
+      justify-content: space-between;
       padding-top: 4px;
-      font-weight: var(--font-weight-bold);
     }
   }
 
-  &__favourite-icon {
-    position: absolute;
-    bottom: 2px;
-    right: 1px;
+  &__artist {
+    font-weight: var(--font-weight-bold);
+    align-self: flex-start;
+  }
+
+  &__icon {
     width: 2rem;
     height: 2rem;
+    align-self: flex-end;
+    flex: 0 0 auto;
 
     &--fill {
       fill: $color-primary-dark;
