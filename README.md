@@ -28,6 +28,8 @@ Modern Javascript (vanilla only) was mainly used to create a fluid user experien
 - search: this is the form for the user search.
 - View: parent class for rendering.
 - MessageView: parent class with messages and extends View.
+- sectionHeadings: used to control buttons to show/hide results and favourites.
+- mediaQueries: javascript media queries.
 
 Other files are:
 
@@ -59,7 +61,7 @@ As seen in the package.json, Parcel was used in the development. Building curren
 
 ## To Do
 
-- Add responsive design in CSS
+- Add responsive design in CSS for screen widths lower than 600px
 - Support older browsers
 
 ## License
