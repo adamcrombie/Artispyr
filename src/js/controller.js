@@ -72,14 +72,20 @@ const controlFavouritesPagination = function (page) {
 };
 
 const controlFavouritesDeleteFavourite = function (id) {
+  console.log(id);
   model.removeFavourite(id);
   favouritesView.removeFavourite(id);
   noFavouritesMessage();
   resultsView.updateFavourite(model.state.favourites.entries);
-  artworkView.updateFavourite(
-    model.state.artwork.favourite,
-    id === model.state.artwork.id
-  );
+
+  if (
+    model.state.artwork.favourite !== undefined &&
+    model.state.artwork.id !== undefined
+  )
+    artworkView.updateFavourite(
+      model.state.artwork.favourite,
+      id === model.state.artwork.id
+    );
   favouritesView.updateSelected();
 };
 
