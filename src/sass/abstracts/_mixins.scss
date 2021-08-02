@@ -43,6 +43,27 @@
 
 // 1em = 16px
 @mixin respond($breakpoint) {
+  // 352px
+  @if $breakpoint == tiny-1 {
+    @media only screen and (max-width: 22em) {
+      @content;
+    }
+  }
+
+  // 400px
+  @if $breakpoint == small-3 {
+    @media only screen and (max-width: 25em) {
+      @content;
+    }
+  }
+
+  // 500px
+  @if $breakpoint == small-2 {
+    @media only screen and (max-width: 31.25em) {
+      @content;
+    }
+  }
+
   // 720px
   @if $breakpoint == small-1 {
     @media only screen and (max-width: 45em) {

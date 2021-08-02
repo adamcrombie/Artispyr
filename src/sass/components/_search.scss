@@ -3,11 +3,23 @@
   flex-direction: column;
   grid-row-gap: 2rem;
 
+  @include respond(small-3) {
+    grid-row-gap: 4rem;
+  }
+
   &__group {
     display: flex;
 
     &:first-child {
       align-self: center;
+
+      @include respond(small-3) {
+        align-self: flex-end;
+        display: flex;
+        flex-direction: column;
+        grid-row-gap: 1.5rem;
+        margin-right: 2rem;
+      }
     }
   }
 
@@ -20,11 +32,15 @@
     font-size: 1.6rem;
     font-weight: var(--font-weight-medium);
     border: none;
-    border-radius: 2rem 0 0 2rem;
     background-color: $color-primary-medium;
     border: 1px solid $color-primary-medium;
     outline: none;
     transition: all 0.3s;
+
+    @include respond(small-3) {
+      width: 100%;
+      border-radius: 0;
+    }
 
     &::placeholder,
     &::-webkit-input-placeholder {
@@ -56,6 +72,10 @@
       position: relative;
       outline: none;
       transition: all 0.3s;
+
+      @include respond(small-3) {
+        border-radius: 0;
+      }
     }
 
     &:not(:disabled) {
@@ -99,6 +119,10 @@
 
     @include respond(small-1) {
       margin-left: 2rem;
+    }
+
+    @include respond(small-3) {
+      margin-left: 0;
     }
   }
 

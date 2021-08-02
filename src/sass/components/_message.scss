@@ -18,20 +18,39 @@
   padding: 1rem 2rem;
   margin-bottom: 4rem;
 
+  @include respond(small-3) {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
   &__icon {
     width: 5.5rem;
     height: 5.5rem;
+
+    @include respond(small-3) {
+      width: 4.5rem;
+      height: 4.5rem;
+    }
 
     &--error {
       @extend %svg-icon;
       width: 6.5rem;
       height: 6.5rem;
+
+      @include respond(small-3) {
+        width: 5.5rem;
+        height: 5.5rem;
+      }
     }
   }
 
   &__paragraph {
     font-size: 1.6rem;
     padding: 1rem;
+
+    @include respond(small-3) {
+      text-align: center;
+    }
   }
 }
 

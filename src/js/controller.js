@@ -114,10 +114,6 @@ const controlHideFavourites = function () {
   sectionHeadingsView.hideFavourites();
 };
 
-const controlHideResults = function () {
-  sectionHeadingsView.hideResults();
-};
-
 const queryIsValid = function (q) {
   return new RegExp(`[a-z]{${MIN_LETTERS_IN_WORD},}`, 'i').test(q);
 };
@@ -165,7 +161,6 @@ const init = function () {
   favouritesView.addHandlerDeleteFavourite(controlFavouritesDeleteFavourite);
   sectionHeadingsView.addHandlerClick(controlSectionShowHide);
   mediaQueriesView.monitorHideFavourites(controlHideFavourites);
-  mediaQueriesView.monitorHideResults(controlHideResults);
 };
 
 init();

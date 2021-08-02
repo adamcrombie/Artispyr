@@ -45,7 +45,7 @@ Queries were made through minified URL encoded JSON with Elasticsearch syntax.
 
 ### Scss
 
-CSS was organised with Scss. There was less of an emphasis with CSS on this project, as the concentration was on Javascript. Consequently, complete responsiveness has been left out for now, but will be implemented soon.
+CSS was organised with Scss. There was less of an emphasis with CSS on this project, as the concentration was on Javascript.
 
 ### Parcel
 
@@ -61,7 +61,6 @@ As seen in the package.json, Parcel was used in the development. Building curren
 
 ## To Do
 
-- Add responsive design in CSS for screen widths lower than 600px
 - Support older browsers
 
 ## License
