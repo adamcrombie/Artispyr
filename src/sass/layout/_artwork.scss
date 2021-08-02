@@ -134,9 +134,10 @@
     }
 
     &__icon {
+      cursor: pointer;
+      fill: $color-primary-light-1;
       width: 2.4rem;
       height: 2.4rem;
-      fill: $color-primary-light-1;
       transition: all 0.3s;
 
       @include respond(small-1) {
@@ -170,8 +171,10 @@
       animation: fadeOut 2.5s ease-in;
 
       @include respond(small-1) {
-        top: 0rem;
-        left: -5rem;
+        top: 0.5rem;
+        left: -10rem;
+        font-size: 1.3rem;
+        width: 10rem;
       }
     }
   }

@@ -17,11 +17,11 @@ class ArtworkDetailsView extends MessageView {
   _getHtml() {
     return `
         <div class="artwork-details__favourite">
-            <svg class="artwork-details__favourite__icon${
-              this._data.favourite ? ' favourite' : ''
-            }">
-                <use xlink:href="${icons}#star"></use>
-            </svg>
+          <svg class="artwork-details__favourite__icon${
+            this._data.favourite ? ' favourite' : ''
+          }">
+              <use xlink:href="${icons}#star"></use>
+          </svg>
         </div>
         <h2 class="artwork-details__title">
             ${this._data.artworkTitle}
