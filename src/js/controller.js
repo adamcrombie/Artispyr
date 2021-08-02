@@ -12,7 +12,11 @@ import sectionHeadingsView from './views/sectionHeadingsView';
 import mediaQueriesView from './views/mediaQueriesView';
 import { NoResultsReceivedError } from './noResultsReceivedError';
 import { UserInputError } from './userInputError';
-import { MIN_LETTERS_IN_WORD, MAX_CHARACTERS_IN_QUERY } from './config';
+import {
+  MIN_LETTERS_IN_WORD,
+  MAX_CHARACTERS_IN_QUERY,
+  RESULTS_PER_PAGE,
+} from './config';
 
 const controlArtwork = async function () {
   try {
@@ -72,28 +76,27 @@ const controlFavouritesPagination = function (page) {
 };
 
 const controlFavouritesDeleteFavourite = function (id) {
-  console.log(id);
   model.removeFavourite(id);
-  favouritesView.removeFavourite(id);
-  noFavouritesMessage();
   resultsView.updateFavourite(model.state.favourites.entries);
 
   if (
     model.state.artwork.favourite !== undefined &&
     model.state.artwork.id !== undefined
-  )
+  ) {
     artworkView.updateFavourite(
       model.state.artwork.favourite,
       id === model.state.artwork.id
     );
+  }
+
+  removeFavouriteInFavouritesView(id);
   favouritesView.updateSelected();
 };
 
 const controlToggleFavourite = function () {
   if (model.state.artwork.favourite) {
     model.removeFavourite(model.state.artwork.id);
-    favouritesView.removeFavourite(model.state.artwork.id);
-    noFavouritesMessage();
+    removeFavouriteInFavouritesView(model.state.artwork.id);
   } else {
     model.addFavourite(model.state.artwork);
     if (favouritesReachesPageThreshold())
@@ -134,6 +137,21 @@ const checkInput = function (query, category) {
     throw new UserInputError(
       'Search query exceeded the maximum number of characters allowed, which is 50. Please try again.'
     );
+};
+
+const removeFavouriteInFavouritesView = function (id) {
+  favouritesPaginationView.render(model.state.favourites);
+
+  const numberOfPages = favouritesPaginationView.totalPages();
+  if (model.state.favourites.page > numberOfPages)
+    model.state.favourites.page = numberOfPages;
+
+  if (model.state.favourites.entries.length >= RESULTS_PER_PAGE) {
+    favouritesView.render(model.getFavouritesPage(model.state.favourites.page));
+  } else {
+    favouritesView.removeFavourite(id);
+  }
+  noFavouritesMessage();
 };
 
 const noFavouritesMessage = function () {

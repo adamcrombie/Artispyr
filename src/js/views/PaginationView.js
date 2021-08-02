@@ -16,10 +16,12 @@ export default class PaginationView extends View {
     this.#paginationHide();
   }
 
+  totalPages() {
+    return Math.ceil(this._data.entries.length / this._data.entriesPerPage);
+  }
+
   _getHtml() {
-    const totalPages = Math.ceil(
-      this._data.entries.length / this._data.entriesPerPage
-    );
+    const totalPages = this.totalPages();
     const currentPage = this._data.page;
 
     if (currentPage === 1 && totalPages > currentPage) {
