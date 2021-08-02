@@ -7,6 +7,10 @@
   justify-content: center;
   height: 100%;
 
+  @include respond(small-1) {
+    padding: 4rem 0;
+  }
+
   &__info {
     text-align: center;
 
@@ -43,6 +47,10 @@
         width: 70%;
         margin: 0 auto 1rem auto;
         line-height: 1.6;
+      }
+
+      @include respond(small-1) {
+        margin-bottom: 3rem;
       }
     }
   }
