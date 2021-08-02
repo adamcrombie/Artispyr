@@ -2,6 +2,10 @@
   text-transform: uppercase;
   font-weight: var(--font-weight-semi-bold);
   font-size: 1.6rem;
+
+  @include respond(small-1) {
+    font-size: 2.2rem;
+  }
 }
 
 .paragraph {

@@ -37,7 +37,6 @@
 
 .message-column {
   @extend %message;
-
   padding: 0.5rem 1rem;
 
   &__icon {
@@ -54,10 +53,18 @@
   &__paragraph {
     font-size: 1.4rem;
     padding: 0.5rem;
+
+    @include respond(small-1) {
+      margin-left: 0.5rem;
+      font-size: 1.5rem;
+    }
   }
 }
 
 .message-loading {
+  @include respond(small-1) {
+    text-align: center;
+  }
   &__icon {
     margin-top: 2rem;
     stroke: $color-primary-dark;

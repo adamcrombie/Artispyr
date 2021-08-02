@@ -6,10 +6,23 @@
   flex: 0 0 var(--column-listing-width);
   overflow: hidden;
 
+  @include respond(small-1) {
+    display: block;
+    flex: 0 0 auto;
+  }
+
   &__message {
     max-width: 95%;
     &:not(:empty) {
       margin-top: 12rem;
+      @include respond(small-1) {
+        width: 32rem;
+        margin: 6rem auto;
+      }
+    }
+
+    @include respond(small-1) {
+      max-width: 75%;
     }
   }
 
@@ -18,6 +31,13 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+
+    @include respond(small-1) {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, var(--column-listing-width));
+      justify-content: center;
+      justify-items: center;
+    }
   }
 }
 
@@ -26,6 +46,12 @@
   // 720px
   @if $breakpoint == small-1 {
     @media only screen and (max-width: 45em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == min-small-1 {
+    @media only screen and (min-width: 45.0625em) {
       @content;
     }
   }

@@ -5,6 +5,10 @@
   flex-direction: column;
   align-items: center;
 
+  @include respond(small-1) {
+    flex: 0 0 auto;
+  }
+
   &__message {
     max-width: 70%;
     &:not(:empty) {
@@ -21,6 +25,11 @@
       padding: 0.5rem 0.5rem 2rem 0.5rem;
     }
 
+    @include respond(small-1) {
+      padding: 0;
+      margin: 0;
+    }
+
     & img {
       width: 100%;
     }
@@ -28,6 +37,11 @@
 
   &__details {
     width: 70%;
+
+    @include respond(small-1) {
+      width: 100%;
+      padding: 0 1rem;
+    }
 
     &__message {
       &:not(:empty) {
@@ -43,15 +57,28 @@
   align-items: center;
   position: relative;
 
+  @include respond(small-1) {
+    &:not(:empty) {
+      margin-top: 4rem;
+    }
+  }
+
   &__title {
     font-size: 2.8rem;
     font-weight: var(--font-weight-semi-bold);
     margin-bottom: 1rem;
     text-align: center;
+    @include respond(small-1) {
+      width: 80%;
+    }
   }
 
   &__created {
     font-size: 1.6rem;
+    @include respond(small-1) {
+      width: 70%;
+      text-align: center;
+    }
   }
 
   &__divider {
@@ -59,12 +86,20 @@
     height: 1px;
     background-color: $color-primary-medium;
     margin: 2rem 0;
+
+    @include respond(small-1) {
+      width: 80%;
+    }
   }
 
   &__artist {
     font-size: 2.4rem;
     text-align: center;
     width: 90%;
+
+    @include respond(small-1) {
+      width: 70%;
+    }
 
     &--block {
       display: block;
@@ -82,6 +117,10 @@
     &:last-child {
       margin-bottom: 6rem;
     }
+
+    @include respond(small-1) {
+      padding-left: 6rem;
+    }
   }
 
   &__favourite {
@@ -89,11 +128,21 @@
     top: 0;
     right: -6rem;
 
+    @include respond(small-1) {
+      top: -2.8rem;
+      right: 2rem;
+    }
+
     &__icon {
       width: 2.4rem;
       height: 2.4rem;
       fill: $color-primary-light-1;
       transition: all 0.3s;
+
+      @include respond(small-1) {
+        width: 3rem;
+        height: 3rem;
+      }
 
       &.favourite {
         fill: $color-primary-dark;
@@ -117,8 +166,13 @@
       font-weight: var(--font-weight-medium);
       display: block;
       text-align: center;
-      opacity: 0;
-      animation: fadeOut 2.5s ease-in;
+      // opacity: 0;
+      // animation: fadeOut 2.5s ease-in;
+
+      @include respond(small-1) {
+        top: 0rem;
+        left: -5rem;
+      }
     }
   }
 }

@@ -100,7 +100,7 @@ const controlToggleFavourite = function () {
     if (favouritesView.messageIsDisplayed()) favouritesView.clearMessage();
   }
   resultsView.updateFavourite(model.state.favourites.entries);
-  artworkView.updateFavourite(model.state.artwork?.favourite);
+  artworkView.updateFavourite(model.state.artwork.favourite);
   favouritesView.updateSelected();
 };
 

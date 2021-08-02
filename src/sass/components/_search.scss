@@ -96,6 +96,10 @@
 
   &:last-child {
     margin-left: 4rem;
+
+    @include respond(small-1) {
+      margin-left: 2rem;
+    }
   }
 
   &__radio {

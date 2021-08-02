@@ -28,11 +28,14 @@ body {
 
 .container {
   width: 125rem;
-  min-height: 105rem;
   background-color: $color-white;
   border-radius: 0.6rem;
   margin: 6rem auto;
   box-shadow: var(--shadow-container);
+
+  @include respond(min-small-1) {
+    min-height: 105rem;
+  }
 
   @include respond(medium-1) {
     box-shadow: none;
@@ -53,6 +56,11 @@ body {
     [heading-end main-start] 1fr [main-end footer-start] 16rem [footer-end];
 
   overflow: hidden;
+
+  @include respond(small-1) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 ::selection {

@@ -10,12 +10,21 @@
     grid-column: full-start / full-end;
     grid-row: heading-start / heading-end;
     position: relative;
+
+    @include respond(small-1) {
+      justify-content: center;
+      padding: 3rem 0;
+    }
   }
 
   &__main {
     grid-column: full-start / full-end;
     grid-row: main-start / main-end;
     display: flex;
+
+    @include respond(small-1) {
+      flex-direction: column;
+    }
   }
 
   &__btn {
@@ -29,6 +38,10 @@
     top: 50%;
     transform: translateY(-50%);
     border-radius: 50%;
+
+    @include respond(small-1) {
+      display: none;
+    }
 
     &__icon {
       height: 3.5rem;
@@ -60,19 +73,36 @@
   align-items: center;
 
   &--results {
-    margin-left: calc(var(--column-listing-width) / 2);
-    transform: translateX(-50%);
+    @include respond(min-small-1) {
+      margin-left: calc(var(--column-listing-width) / 2);
+      transform: translateX(-50%);
+    }
   }
 
   &--favourites {
     margin-right: calc(var(--column-listing-width) / 2 + 1rem);
     transform: translateX(50%);
+
+    @include respond(small-1) {
+      display: none;
+    }
+  }
+
+  @include respond(small-1) {
+    &--artwork {
+      display: none;
+    }
   }
 
   &__icon {
     width: 2.4rem;
     height: 2.4rem;
     margin-right: 0.5rem;
+
+    @include respond(small-1) {
+      width: 3rem;
+      height: 3rem;
+    }
 
     &--results,
     &--artwork {
@@ -87,6 +117,21 @@
     &--favourites {
       padding: 1px;
       transform: translateY(-1px);
+
+      @include respond(min-small-1) {
+        transform: translateY(-1px);
+      }
+      @include respond(small-1) {
+        transform: translateY(-2px);
+      }
     }
+  }
+}
+
+.mobile-display {
+  display: flex;
+
+  @include respond(min-small-1) {
+    display: none;
   }
 }
