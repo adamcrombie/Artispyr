@@ -166,8 +166,8 @@
       font-weight: var(--font-weight-medium);
       display: block;
       text-align: center;
-      // opacity: 0;
-      // animation: fadeOut 2.5s ease-in;
+      opacity: 0;
+      animation: fadeOut 2.5s ease-in;
 
       @include respond(small-1) {
         top: 0rem;
