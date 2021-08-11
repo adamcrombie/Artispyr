@@ -22,9 +22,9 @@ Nightly builds of parcel were used to see if the issue of using SVGs was fixed -
 
 ## How to Set Up
 
-- First run '`npm install`' to install dependencies from package.json.
-- '`npm start`' will then launch the development server running on localhost.
-- '`npm run build`' prepares the project for production.
+- First run `npm install` to install dependencies from package.json.
+- `npm start` will then launch the development server running on localhost.
+- `npm run build` prepares the project for production.
 
 ## Motivation
 
