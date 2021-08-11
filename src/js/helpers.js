@@ -3,6 +3,8 @@ import {
   IMAGE_URL,
   LARGE_IMAGE_PART_URL,
   SMALL_IMAGE_PART_URL,
+  REQUEST_HEADER_IDENTIFY_FIELD,
+  REQUEST_HEADER_PROJECT_INFO,
 } from './config';
 
 export const urlEncodeQuery = q => encodeURIComponent(JSON.stringify(q));
@@ -15,10 +17,16 @@ const timeout = function (seconds) {
   });
 };
 
+const headers = {
+  [REQUEST_HEADER_IDENTIFY_FIELD]: REQUEST_HEADER_PROJECT_INFO,
+};
+
 export const getData = async function (url) {
   try {
     const res = await Promise.race([
-      fetch(url),
+      fetch(url, {
+        headers: headers,
+      }),
       timeout(QUERY_TIMEOUT_SECONDS),
     ]);
     const data = await res.json();

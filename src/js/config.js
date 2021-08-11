@@ -35,3 +35,6 @@ export const QUERY_TIMEOUT_SECONDS = 5;
 export const MIN_LETTERS_IN_WORD = 3;
 export const MAX_CHARACTERS_IN_QUERY = 50;
 export const RESULT_LISTING_ENTRY_MAX_CHARACTERS = 37;
+
+export const REQUEST_HEADER_IDENTIFY_FIELD = 'AIC-User-Agent';
+export const REQUEST_HEADER_PROJECT_INFO = 'Artispyr (artispyr@gmail.com)';
