@@ -166,7 +166,7 @@ export const getFavouritesPage = function (page) {
 };
 
 const persistFavourites = function () {
-  localStorage.setItem('favourites', JSON.stringify(state.favourites));
+  localStorage.setItem('favourites', JSON.stringify(state.favourites.entries));
 };
 
 export const addFavourite = function (artwork) {
@@ -211,7 +211,7 @@ export const removeFavourite = function (id) {
 const init = function () {
   const savedData = localStorage.getItem('favourites');
 
-  if (savedData) state.favourites = JSON.parse(savedData);
+  if (savedData) state.favourites.entries = JSON.parse(savedData);
 };
 
 init();
