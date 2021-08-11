@@ -4,6 +4,28 @@ This is a website interface to the Art Institute of Chicago API to search for ar
 
 A live demo can be viewed [here](https://artispyr.netlify.app).
 
+## Preview
+
+![Preview of project](./preview.png)
+
+## Requirements
+
+The following npm packages were used in the development:
+
+- parcel: 2.0.0-nightly.776
+- @parcel/transformer-image: 2.0.0-nightly.2400
+- @parcel/transformer-sass: 2.0.0-nightly.778
+- core-js: 3.15.2
+- regenerator-runtime: 0.13.7
+
+Nightly builds of parcel were used to see if the issue of using SVGs was fixed - please see explanation in Parcel section of Technologies below.
+
+## How to Set Up
+
+- First run '`npm install`' to install dependencies from package.json.
+- '`npm start`' will then launch the development server running on localhost.
+- '`npm run build`' prepares the project for production.
+
 ## Motivation
 
 The focus of this project was on Javascript, the interaction with an API and handling asynchronous code. This gave a chance to practice using MVC architecture in Javascript with classes, inheritance and design patterns - e.g. publisher-subscriber.
