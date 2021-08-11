@@ -176,7 +176,8 @@ const renderResults = function (page = 1) {
 const init = function () {
   if (searchView.isDisabled()) searchView.enable();
   artworkView.renderMessage();
-  favouritesView.render(model.state.favourites.entries);
+  favouritesView.render(model.getFavouritesPage(model.state.favourites.page));
+  favouritesPaginationView.render(model.state.favourites);
   searchView.addHandlerSearch(controlSearch);
   artworkView.addHandlerFavourite(controlToggleFavourite);
   artworkView.addHandlerRender(controlArtwork);
