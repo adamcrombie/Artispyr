@@ -2,7 +2,7 @@
 
 This is a website interface to the Art Institute of Chicago API to search for artworks or artists. Results are shown in a paginated listing and the user can choose an image to view - this will then be shown in the main section with its details. Bookmarking can be done by making it a 'favourite'.
 
-A live demo can be viewed [here](https://artispyr.netlify.app).
+The project is currently live and can be viewed [here](https://artispyr.netlify.app).
 
 ## Preview
 
