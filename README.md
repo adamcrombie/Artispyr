@@ -2,7 +2,7 @@
 
 This is a website interface to the Art Institute of Chicago API to search for artworks or artists. Results are shown in a paginated listing and the user can choose an image to view - this will then be shown in the main section with its details. Bookmarking can be done by making it a 'favourite'.
 
-A live demo can be viewed [here](https://artispyr.netlify.app).
+The project is currently live and can be viewed [here](https://artispyr.netlify.app).
 
 ## Preview
 
@@ -44,7 +44,7 @@ Modern Javascript (vanilla only) was mainly used to create a fluid user experien
 
 - artwork: main section showing the large image and details of the item. This is divided into the artworkImage and artworkDetails.
 - results/favourites: column listing having essentially the same code but displaying different data.
-- resultsSummary: total number of available results. The amount obtained is capped at 50 to prevent excessive use as this is just a demo, but it can be unlimited.
+- resultsSummary: total number of available results. The amount obtained is capped at 50 to prevent excessive use.
 - artworkListing: an item in the results and favourites listing, which is kind of a child to the results and favourites.
 - pagination: this is given to the results and favourites to cycle through the listing pages.
 - search: this is the form for the user search.
